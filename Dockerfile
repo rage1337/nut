@@ -85,8 +85,8 @@ ADD ${NUT_RELEASE} /tmp/nut.tar.gz
 # Build venv
 RUN \
   set -ex && \
-  echo "Extracting nut..." && \
-    tar xzf /tmp/nut.tar.gz --strip-components=1 -C /nut && \
+  echo "Getting nut..." && \
+    git clone https://github.com/blawar/nut /nut && \
   echo "Upgrading pip..." && \
     pip3 install --upgrade pip && \
   echo "Removing pyqt5 from requirements.txt since we have no gui..." && \
